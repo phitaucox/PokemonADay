@@ -13,6 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *headlineLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bodyLabel;
 
-- (void)fillNoteViewWithHeadline:(NSString *)headline body:(NSString *)body;
+- (void)fillNoteViewWithHeadline:(NSString *)headline body:(NSString *)body backgroundColor:(UIColor *)backgroundColor textColor:(UIColor *)textColor;
 
 @end

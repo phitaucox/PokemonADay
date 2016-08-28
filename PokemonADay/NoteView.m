@@ -23,10 +23,16 @@
     return self;
 }
 
-- (void)fillNoteViewWithHeadline:(NSString *)headline body:(NSString *)body
+- (void)fillNoteViewWithHeadline:(NSString *)headline body:(NSString *)body backgroundColor:(UIColor *)backgroundColor textColor:(UIColor *)textColor
 {
     self.headlineLabel.text = headline;
     self.bodyLabel.text = body;
+    
+    self.headlineLabel.backgroundColor = backgroundColor;
+    self.headlineLabel.textColor = textColor;
+    
+    self.bodyLabel.backgroundColor = backgroundColor;
+    self.bodyLabel.textColor = textColor;
 }
 
 @end

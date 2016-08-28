@@ -34,7 +34,7 @@
     
     Note *note = [[PADNotesManager sharedManager] fetchRandomNote];
     NSString *headline = [Note headlineFromNoteType:note.type];
-    [noteView fillNoteViewWithHeadline:headline body:note.text];
+    [noteView fillNoteViewWithHeadline:headline body:note.text backgroundColor:[Note backgroundColorForNoteType:note.type] textColor:[Note textColorForNoteType:note.type]];
     
     [self.view addSubview:noteView];
     

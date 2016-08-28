@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(int16_t, NoteType)
 {
@@ -35,5 +36,9 @@ typedef NS_ENUM(int16_t, NoteType)
 + (NoteType)noteTypeFromTypeString:(NSString *)typeString;
 
 + (NSString *)headlineFromNoteType:(NoteType)noteType;
+
++ (UIColor *)backgroundColorForNoteType:(NoteType)noteType;
+
++ (UIColor *)textColorForNoteType:(NoteType)noteType;
 
 @end
