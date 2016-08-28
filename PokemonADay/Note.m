@@ -12,19 +12,6 @@
 
 @dynamic noteID, text, type;
 
-//- (instancetype)initWithID:(NSInteger)ID text:(NSString *)text type:(NSString *)type
-//{
-//    self = [super init];
-//    if (self)
-//    {
-//        self.ID = ID;
-//        self.text = text;
-//        self.type = [self noteTypeFromTypeString:type];
-//    }
-//    
-//    return self;
-//}
-
 + (NoteType)noteTypeFromTypeString:(NSString *)typeString
 {
     NoteType type = TypeUnknown;
@@ -57,6 +44,38 @@
     NSAssert(type != TypeUnknown, @"type was unknown");
     
     return type;
+}
+
++ (NSString *)headlineFromNoteType:(NoteType)noteType
+{
+    NSString *headline = @"";
+    
+    if (noteType == RememberWhen)
+    {
+        headline = @"Remember when...";
+    }
+    else if (noteType == WeShould)
+    {
+        headline = @"We should...";
+    }
+    else if (noteType == LoveReasons)
+    {
+        headline = @"I love you, because...";
+    }
+    else if (noteType == QuotesAndLyrics)
+    {
+        headline = @"Lyrics and quotes...";
+    }
+    else if (noteType == DirtyThings)
+    {
+        headline = @"Dirty things...";
+    }
+    else if (noteType == AdjectiveAlphabet)
+    {
+        headline = @"An adjective to describe you...";
+    }
+    
+    return headline;
 }
 
 @end

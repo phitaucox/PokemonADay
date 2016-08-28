@@ -6,9 +6,12 @@
 //  Copyright © 2016 Cox, Christian. All rights reserved.
 //
 
+#import <pop/POP.h>
+
 #import "PokemonADayVC.h"
 #import "NoteView.h"
-#import <pop/POP.h>
+#import "PADNotesManager.h"
+#import "Note.h"
 
 @interface PokemonADayVC ()
 
@@ -28,7 +31,10 @@
 {
     NoteView *noteView = [[NoteView alloc] initWithFrame:CGRectZero];
     noteView.center = self.view.center;
-    [noteView fillNoteViewWithHeadline:@"Headline" body:@"Body"];
+    
+    Note *note = [[PADNotesManager sharedManager].notes firstObject];
+    NSString *headline = [Note headlineFromNoteType:note.type];
+    [noteView fillNoteViewWithHeadline:headline body:note.text];
     
     [self.view addSubview:noteView];
     

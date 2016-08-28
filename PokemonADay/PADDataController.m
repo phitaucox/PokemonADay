@@ -10,7 +10,18 @@
 
 @implementation PADDataController
 
-- (id)init
++ (instancetype)sharedInstance
+{
+    static PADDataController *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self class] new];
+    });
+    
+    return sharedInstance;
+}
+
+- (instancetype)init
 {
     self = [super init];
     if (self)

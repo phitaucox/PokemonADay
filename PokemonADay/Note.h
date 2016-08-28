@@ -34,4 +34,6 @@ typedef NS_ENUM(int16_t, NoteType)
 
 + (NoteType)noteTypeFromTypeString:(NSString *)typeString;
 
++ (NSString *)headlineFromNoteType:(NoteType)noteType;
+
 @end
