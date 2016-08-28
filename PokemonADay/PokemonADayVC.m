@@ -32,7 +32,7 @@
     NoteView *noteView = [[NoteView alloc] initWithFrame:CGRectZero];
     noteView.center = self.view.center;
     
-    Note *note = [[PADNotesManager sharedManager].notes firstObject];
+    Note *note = [[PADNotesManager sharedManager] fetchRandomNote];
     NSString *headline = [Note headlineFromNoteType:note.type];
     [noteView fillNoteViewWithHeadline:headline body:note.text];
     

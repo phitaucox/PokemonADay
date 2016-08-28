@@ -92,17 +92,7 @@
 
 - (NSArray *)fetchNotes
 {
-    NSArray *notes = @[];
-    
-    NSFetchRequest *noteFetch = [[NSFetchRequest alloc] initWithEntityName:@"Note"];
-    
-    NSError *fetchError = nil;
-    
-    notes = [[PADDataController sharedInstance].managedObjectContext executeFetchRequest:noteFetch error:&fetchError];
-    
-    NSAssert(!fetchError, @"note fetch in clearData failed");
-    
-    return notes;
+    return [self fetchNotesWithPredicate:nil];
 }
 
 - (void)clearNotes
@@ -113,6 +103,30 @@
     {
         [[PADDataController sharedInstance].managedObjectContext deleteObject:note];
     }
+}
+
+- (Note *)fetchRandomNote
+{
+    NSUInteger r = arc4random_uniform((uint32_t)[self.notes count]) + 1;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"noteID == %lu", r];
+    NSArray *fetchedNotes = [self fetchNotesWithPredicate:predicate];
+    
+    return [fetchedNotes firstObject];
+}
+
+- (NSArray *)fetchNotesWithPredicate:(NSPredicate *)predicate
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Note"];
+    if (predicate)
+    {
+        [fetchRequest setPredicate:predicate];
+    }
+    
+    NSError *fetchError = nil;
+    
+    NSAssert(!fetchError, @"Note fetch failed!");
+    
+    return [[PADDataController sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
 }
 
 @end
