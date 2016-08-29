@@ -32,6 +32,7 @@ typedef NS_ENUM(int16_t, NoteType)
 @property (nonatomic, strong) NSString *noteID;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, assign) NoteType type;
+@property (nonatomic, assign) BOOL hasBeenSeen;
 
 + (NoteType)noteTypeFromTypeString:(NSString *)typeString;
 

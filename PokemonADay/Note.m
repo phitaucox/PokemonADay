@@ -10,7 +10,7 @@
 
 @implementation Note
 
-@dynamic noteID, text, type;
+@dynamic noteID, text, type, hasBeenSeen;
 
 + (NoteType)noteTypeFromTypeString:(NSString *)typeString
 {

@@ -16,6 +16,6 @@
 
 + (instancetype)sharedManager;
 
-- (Note *)fetchRandomNote;
+- (Note *)fetchRandomUnseenNote;
 
 @end

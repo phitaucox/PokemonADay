@@ -80,6 +80,7 @@
             noteManagedObj.noteID = note[@"id"];
             noteManagedObj.text = note[@"text"];
             noteManagedObj.type = [Note noteTypeFromTypeString:note[@"type"]];
+            noteManagedObj.hasBeenSeen = NO;
             
             NSError *error = nil;
             
@@ -105,13 +106,18 @@
     }
 }
 
-- (Note *)fetchRandomNote
+- (Note *)fetchRandomUnseenNote
 {
-    NSUInteger r = arc4random_uniform((uint32_t)[self.notes count]) + 1;
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"noteID == %lu", r];
-    NSArray *fetchedNotes = [self fetchNotesWithPredicate:predicate];
+    NSPredicate *unSeenPredicate = [NSPredicate predicateWithFormat:@"hasBeenSeen == NO"];
+    NSArray *unseenNotes = [self fetchNotesWithPredicate:unSeenPredicate];
+    NSUInteger r = arc4random_uniform((uint32_t)[unseenNotes count]) + 1;
+    NSPredicate *randomPredicate = [NSPredicate predicateWithFormat:@"noteID == %lu", r];
+    NSArray *fetchedNotes = [self fetchNotesWithPredicate:randomPredicate];
+    Note *note = [fetchedNotes firstObject];
+    note.hasBeenSeen = YES;
+    [[[PADDataController sharedInstance] managedObjectContext] refreshObject:note mergeChanges:YES];
     
-    return [fetchedNotes firstObject];
+    return note;
 }
 
 - (NSArray *)fetchNotesWithPredicate:(NSPredicate *)predicate
