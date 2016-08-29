@@ -12,17 +12,27 @@
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
-    NoteView *noteView = [[[NSBundle mainBundle] loadNibNamed: NSStringFromClass([self class]) owner:self options: nil] firstObject];
+    self = [super initWithFrame:frame];
+    if (self)
+    {
+        self = [[[NSBundle mainBundle] loadNibNamed: NSStringFromClass([self class]) owner:self options: nil] firstObject];
+        
+        self.frame = frame;
+    }
     
-    noteView.frame = frame;
-    
-    return noteView;
+    return self;
 }
 
-- (void)fillNoteViewWithHeadline:(NSString *)headline body:(NSString *)body
+- (void)fillNoteViewWithHeadline:(NSString *)headline body:(NSString *)body backgroundColor:(UIColor *)backgroundColor textColor:(UIColor *)textColor
 {
     self.headlineLabel.text = headline;
     self.bodyLabel.text = body;
+    
+    self.headlineLabel.backgroundColor = backgroundColor;
+    self.headlineLabel.textColor = textColor;
+    
+    self.bodyLabel.backgroundColor = backgroundColor;
+    self.bodyLabel.textColor = textColor;
 }
 
 @end

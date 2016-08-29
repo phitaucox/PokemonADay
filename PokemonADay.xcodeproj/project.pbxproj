@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F4795631D73747B003E00D8 /* PADNotesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4795621D73747B003E00D8 /* PADNotesManager.m */; };
 		2F5221BB1D526CF0008A854C /* NoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F5221BA1D526CF0008A854C /* NoteView.xib */; };
 		2F5221BE1D526E1B008A854C /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5221BD1D526E1B008A854C /* NoteView.m */; };
+		2F7B34A51D735194000BB75D /* PADDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B34A41D735194000BB75D /* PADDataController.m */; };
 		2F9840751D7327970061E133 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9840741D7327970061E133 /* Note.m */; };
 		2F98407B1D73351D0061E133 /* carlyapp.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F98407A1D73351D0061E133 /* carlyapp.json */; };
 		2FD70BC41D4D3C7F00532CD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD70BC31D4D3C7F00532CD6 /* main.m */; };
@@ -23,9 +25,13 @@
 
 /* Begin PBXFileReference section */
 		1DEE24EDFB144DC4F3DAE8B4 /* libPods-PokemonADay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PokemonADay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F4795611D73747B003E00D8 /* PADNotesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PADNotesManager.h; sourceTree = "<group>"; };
+		2F4795621D73747B003E00D8 /* PADNotesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADNotesManager.m; sourceTree = "<group>"; };
 		2F5221BA1D526CF0008A854C /* NoteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteView.xib; sourceTree = "<group>"; };
 		2F5221BC1D526E1B008A854C /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
 		2F5221BD1D526E1B008A854C /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
+		2F7B34A31D735194000BB75D /* PADDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PADDataController.h; sourceTree = "<group>"; };
+		2F7B34A41D735194000BB75D /* PADDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADDataController.m; sourceTree = "<group>"; };
 		2F9840731D7327970061E133 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		2F9840741D7327970061E133 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		2F98407A1D73351D0061E133 /* carlyapp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = carlyapp.json; path = ../../Documents/carlyapp.json; sourceTree = "<group>"; };
@@ -64,6 +70,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2F4795641D737483003E00D8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2F4795611D73747B003E00D8 /* PADNotesManager.h */,
+				2F4795621D73747B003E00D8 /* PADNotesManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		2F7B34A21D73516F000BB75D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2FD70BC81D4D3C7F00532CD6 /* PokemonADayVC.h */,
+				2FD70BC91D4D3C7F00532CD6 /* PokemonADayVC.m */,
+				2F7B34A31D735194000BB75D /* PADDataController.h */,
+				2F7B34A41D735194000BB75D /* PADDataController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		2F9840761D732A400061E133 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,14 +99,14 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		2F9840771D732A490061E133 /* Custom UI */ = {
+		2F9840771D732A490061E133 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				2F5221BC1D526E1B008A854C /* NoteView.h */,
 				2F5221BD1D526E1B008A854C /* NoteView.m */,
 				2F5221BA1D526CF0008A854C /* NoteView.xib */,
 			);
-			name = "Custom UI";
+			name = Views;
 			sourceTree = "<group>";
 		};
 		2FD70BB61D4D3C7F00532CD6 = {
@@ -106,10 +132,10 @@
 			children = (
 				2FD70BC51D4D3C7F00532CD6 /* AppDelegate.h */,
 				2FD70BC61D4D3C7F00532CD6 /* AppDelegate.m */,
+				2F4795641D737483003E00D8 /* Managers */,
 				2F9840761D732A400061E133 /* Classes */,
-				2F9840771D732A490061E133 /* Custom UI */,
-				2FD70BC81D4D3C7F00532CD6 /* PokemonADayVC.h */,
-				2FD70BC91D4D3C7F00532CD6 /* PokemonADayVC.m */,
+				2F9840771D732A490061E133 /* Views */,
+				2F7B34A21D73516F000BB75D /* Controllers */,
 				2FD70BCB1D4D3C7F00532CD6 /* Main.storyboard */,
 				2FD70BD11D4D3C7F00532CD6 /* Assets.xcassets */,
 				2FD70BD31D4D3C7F00532CD6 /* LaunchScreen.storyboard */,
@@ -263,8 +289,10 @@
 			files = (
 				2F5221BE1D526E1B008A854C /* NoteView.m in Sources */,
 				2FD70BD01D4D3C7F00532CD6 /* PokemonADay.xcdatamodeld in Sources */,
+				2F7B34A51D735194000BB75D /* PADDataController.m in Sources */,
 				2FD70BCA1D4D3C7F00532CD6 /* PokemonADayVC.m in Sources */,
 				2F9840751D7327970061E133 /* Note.m in Sources */,
+				2F4795631D73747B003E00D8 /* PADNotesManager.m in Sources */,
 				2FD70BC71D4D3C7F00532CD6 /* AppDelegate.m in Sources */,
 				2FD70BC41D4D3C7F00532CD6 /* main.m in Sources */,
 			);
