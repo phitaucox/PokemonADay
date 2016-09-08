@@ -198,6 +198,7 @@
 				TargetAttributes = {
 					2FD70BBE1D4D3C7F00532CD6 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9NXYG6U592;
 					};
 				};
 			};
@@ -413,6 +414,7 @@
 			baseConfigurationReference = 93D23B7925059EFFB1F7B75B /* Pods-PokemonADay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9NXYG6U592;
 				INFOPLIST_FILE = PokemonADay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccox.PokemonADay;
@@ -425,6 +427,7 @@
 			baseConfigurationReference = 593A786FD87D7918664739C6 /* Pods-PokemonADay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9NXYG6U592;
 				INFOPLIST_FILE = PokemonADay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccox.PokemonADay;
