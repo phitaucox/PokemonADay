@@ -18,6 +18,7 @@ typedef NS_ENUM(int16_t, NoteType)
     QuotesAndLyrics,
     DirtyThings,
     AdjectiveAlphabet,
+    WeShouldDoDirtyThings,
     TypeUnknown
 };
 

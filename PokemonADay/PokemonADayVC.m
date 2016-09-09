@@ -43,7 +43,7 @@
     springAnimation.toValue = [NSValue valueWithCGRect:CGRectMake(20, 60, 325, 325)];
     springAnimation.name = @"AnimateNoteOnScreen";
     springAnimation.delegate = self;
-    springAnimation.springSpeed=.5f;     // value between 0-20 default at 4
+    springAnimation.springSpeed= 0.5f;
     
     [noteView pop_addAnimation:springAnimation forKey:@"AnimateNoteOnScreen"];
 }

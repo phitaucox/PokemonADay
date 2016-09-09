@@ -40,6 +40,10 @@
     {
         type = AdjectiveAlphabet;
     }
+    else if ([typeString isEqualToString:@"WeShouldDoDirtyThings"])
+    {
+        type = WeShouldDoDirtyThings;
+    }
     
     NSAssert(type != TypeUnknown, @"type was unknown");
     
@@ -74,6 +78,10 @@
     {
         headline = @"An adjective to describe you...";
     }
+    else if (noteType == WeShouldDoDirtyThings)
+    {
+        headline = @"Dirty things we should do...";
+    }
     
     return headline;
 }
@@ -100,11 +108,15 @@
     }
     else if (noteType == DirtyThings)
     {
-        backgroundColor = [UIColor colorWithRed:0.95 green:0.65 blue:0.07 alpha:1.0];//[UIColor colorWithRed:0.33 green:0.84 blue:0.75 alpha:1.0];
+        backgroundColor = [UIColor colorWithRed:0.95 green:0.65 blue:0.07 alpha:1.0];
     }
     else if (noteType == AdjectiveAlphabet)
     {
         backgroundColor = [UIColor colorWithRed:0.16 green:0.20 blue:0.36 alpha:1.0];
+    }
+    else if (noteType == WeShouldDoDirtyThings)
+    {
+        backgroundColor = [UIColor colorWithRed:0.33 green:0.84 blue:0.75 alpha:1.0];
     }
     
     return backgroundColor;
@@ -114,27 +126,7 @@
 {
     UIColor *textColor = [UIColor darkTextColor];
     
-    if (noteType == RememberWhen)
-    {
-//        textColor =
-    }
-    else if (noteType == WeShould)
-    {
-//        textColor =
-    }
-    else if (noteType == LoveReasons)
-    {
-//        textColor =
-    }
-    else if (noteType == QuotesAndLyrics)
-    {
-//        textColor =
-    }
-    else if (noteType == DirtyThings)
-    {
-//        textColor =
-    }
-    else if (noteType == AdjectiveAlphabet)
+    if (noteType == AdjectiveAlphabet)
     {
         textColor = [UIColor whiteColor];
     }

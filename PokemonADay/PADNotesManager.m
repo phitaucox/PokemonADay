@@ -75,9 +75,11 @@
         
         NSAssert([notes count] > 0, @"notes array is empty");
         
+        NSUInteger count = 1;
+        
         for (NSDictionary *note in notes) {
             Note *noteManagedObj = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:[PADDataController sharedInstance].managedObjectContext];
-            noteManagedObj.noteID = note[@"id"];
+            noteManagedObj.noteID = [NSString stringWithFormat:@"%lu", count];
             noteManagedObj.text = note[@"text"];
             noteManagedObj.type = [Note noteTypeFromTypeString:note[@"type"]];
             noteManagedObj.hasBeenSeen = NO;
@@ -85,6 +87,8 @@
             NSError *error = nil;
             
             BOOL saved = [[PADDataController sharedInstance].managedObjectContext save:&error];
+            
+            count++;
             
             NSAssert(saved, @"Error saving context: %@\n%@", [error localizedDescription], [error userInfo]);
         }
