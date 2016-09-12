@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PokemonADayVC : UIViewController
+@interface PokemonADayVC : UIViewController <UIViewControllerTransitioningDelegate>
 
 
 @end

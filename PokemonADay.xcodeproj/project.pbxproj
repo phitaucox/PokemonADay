@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2F4795631D73747B003E00D8 /* PADNotesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4795621D73747B003E00D8 /* PADNotesManager.m */; };
-		2F5221BB1D526CF0008A854C /* NoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F5221BA1D526CF0008A854C /* NoteView.xib */; };
-		2F5221BE1D526E1B008A854C /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5221BD1D526E1B008A854C /* NoteView.m */; };
+		2F54911E1D825F7700928B19 /* NoteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F54911D1D825F7700928B19 /* NoteVC.m */; };
+		2F5491211D82625800928B19 /* PresentingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5491201D82625800928B19 /* PresentingAnimationController.m */; };
+		2F5491241D82657B00928B19 /* DismissingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5491231D82657B00928B19 /* DismissingAnimationController.m */; };
 		2F7B34A51D735194000BB75D /* PADDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B34A41D735194000BB75D /* PADDataController.m */; };
 		2F9840751D7327970061E133 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9840741D7327970061E133 /* Note.m */; };
 		2F98407B1D73351D0061E133 /* carlyapp.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F98407A1D73351D0061E133 /* carlyapp.json */; };
@@ -27,9 +28,12 @@
 		1DEE24EDFB144DC4F3DAE8B4 /* libPods-PokemonADay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PokemonADay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4795611D73747B003E00D8 /* PADNotesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PADNotesManager.h; sourceTree = "<group>"; };
 		2F4795621D73747B003E00D8 /* PADNotesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADNotesManager.m; sourceTree = "<group>"; };
-		2F5221BA1D526CF0008A854C /* NoteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteView.xib; sourceTree = "<group>"; };
-		2F5221BC1D526E1B008A854C /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
-		2F5221BD1D526E1B008A854C /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
+		2F54911C1D825F7700928B19 /* NoteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteVC.h; sourceTree = "<group>"; };
+		2F54911D1D825F7700928B19 /* NoteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteVC.m; sourceTree = "<group>"; };
+		2F54911F1D82625800928B19 /* PresentingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentingAnimationController.h; sourceTree = "<group>"; };
+		2F5491201D82625800928B19 /* PresentingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentingAnimationController.m; sourceTree = "<group>"; };
+		2F5491221D82657B00928B19 /* DismissingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissingAnimationController.h; sourceTree = "<group>"; };
+		2F5491231D82657B00928B19 /* DismissingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissingAnimationController.m; sourceTree = "<group>"; };
 		2F7B34A31D735194000BB75D /* PADDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PADDataController.h; sourceTree = "<group>"; };
 		2F7B34A41D735194000BB75D /* PADDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADDataController.m; sourceTree = "<group>"; };
 		2F9840731D7327970061E133 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
@@ -82,8 +86,14 @@
 		2F7B34A21D73516F000BB75D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2F54911C1D825F7700928B19 /* NoteVC.h */,
+				2F54911D1D825F7700928B19 /* NoteVC.m */,
 				2FD70BC81D4D3C7F00532CD6 /* PokemonADayVC.h */,
 				2FD70BC91D4D3C7F00532CD6 /* PokemonADayVC.m */,
+				2F54911F1D82625800928B19 /* PresentingAnimationController.h */,
+				2F5491201D82625800928B19 /* PresentingAnimationController.m */,
+				2F5491221D82657B00928B19 /* DismissingAnimationController.h */,
+				2F5491231D82657B00928B19 /* DismissingAnimationController.m */,
 				2F7B34A31D735194000BB75D /* PADDataController.h */,
 				2F7B34A41D735194000BB75D /* PADDataController.m */,
 			);
@@ -102,9 +112,6 @@
 		2F9840771D732A490061E133 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2F5221BC1D526E1B008A854C /* NoteView.h */,
-				2F5221BD1D526E1B008A854C /* NoteView.m */,
-				2F5221BA1D526CF0008A854C /* NoteView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -228,7 +235,6 @@
 				2FD70BD51D4D3C7F00532CD6 /* LaunchScreen.storyboard in Resources */,
 				2F98407B1D73351D0061E133 /* carlyapp.json in Resources */,
 				2FD70BD21D4D3C7F00532CD6 /* Assets.xcassets in Resources */,
-				2F5221BB1D526CF0008A854C /* NoteView.xib in Resources */,
 				2FD70BCD1D4D3C7F00532CD6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,12 +294,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F5221BE1D526E1B008A854C /* NoteView.m in Sources */,
 				2FD70BD01D4D3C7F00532CD6 /* PokemonADay.xcdatamodeld in Sources */,
+				2F5491241D82657B00928B19 /* DismissingAnimationController.m in Sources */,
 				2F7B34A51D735194000BB75D /* PADDataController.m in Sources */,
+				2F54911E1D825F7700928B19 /* NoteVC.m in Sources */,
 				2FD70BCA1D4D3C7F00532CD6 /* PokemonADayVC.m in Sources */,
 				2F9840751D7327970061E133 /* Note.m in Sources */,
 				2F4795631D73747B003E00D8 /* PADNotesManager.m in Sources */,
+				2F5491211D82625800928B19 /* PresentingAnimationController.m in Sources */,
 				2FD70BC71D4D3C7F00532CD6 /* AppDelegate.m in Sources */,
 				2FD70BC41D4D3C7F00532CD6 /* main.m in Sources */,
 			);

@@ -9,9 +9,16 @@
 #import <pop/POP.h>
 
 #import "PokemonADayVC.h"
-#import "NoteView.h"
+
+//#import "NoteView.h"
+
 #import "PADNotesManager.h"
 #import "Note.h"
+
+#import "NoteVC.h"
+
+#import "PresentingAnimationController.h"
+#import "DismissingAnimationController.h"
 
 @interface PokemonADayVC ()
 
@@ -21,31 +28,93 @@
 
 @implementation PokemonADayVC
 
+#pragma mark - View Life Cycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
 }
 
+#pragma mark - Actions
+
 - (IBAction)imageTapped:(UITapGestureRecognizer *)sender
 {
-    NoteView *noteView = [[NoteView alloc] initWithFrame:CGRectZero];
-    noteView.center = self.view.center;
+//    NoteView *noteView = [[NoteView alloc] initWithFrame:CGRectZero];
+//    noteView.center = self.view.center;
+//    
+//    if ([self hasBeenOneDay])
+//    {
+//        Note *note = [[PADNotesManager sharedManager] fetchRandomUnseenNote];
+//        if (note)
+//        {
+//            NSString *headline = [Note headlineFromNoteType:note.type];
+//            [noteView fillNoteViewWithHeadline:headline body:note.text backgroundColor:[Note backgroundColorForNoteType:note.type] textColor:[Note textColorForNoteType:note.type]];
+//            
+//            [self.view addSubview:noteView];
+//            
+//            POPSpringAnimation *springAnimation = [POPSpringAnimation animation];
+//            springAnimation.property = [POPAnimatableProperty propertyWithName:kPOPViewFrame];
+//            springAnimation.toValue = [NSValue valueWithCGRect:CGRectMake(20, 60, 325, 325)];
+//            springAnimation.name = @"AnimateNoteOnScreen";
+//            springAnimation.delegate = self;
+//            springAnimation.springSpeed= 0.5f;
+//            
+//            [noteView pop_addAnimation:springAnimation forKey:@"AnimateNoteOnScreen"];
+//        }
+//    }
     
-    Note *note = [[PADNotesManager sharedManager] fetchRandomUnseenNote];
-    NSString *headline = [Note headlineFromNoteType:note.type];
-    [noteView fillNoteViewWithHeadline:headline body:note.text backgroundColor:[Note backgroundColorForNoteType:note.type] textColor:[Note textColorForNoteType:note.type]];
+    if ([self hasBeenOneDay])
+    {
+        Note *note = [[PADNotesManager sharedManager] fetchRandomUnseenNote];
+        if (note)
+        {
+            POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+            scaleAnimation.springBounciness = 10;
+            scaleAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.4)];
+
+            [self.imageView.layer pop_addAnimation:scaleAnimation forKey:@"scaleAnimation"];
+
+            NoteVC *noteViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"noteModal"];
+
+            noteViewController.transitioningDelegate = self;
+
+            noteViewController.modalPresentationStyle = UIModalPresentationCustom;
+            
+//            NSString *headline = [Note headlineFromNoteType:note.type];
+//            [noteViewController fillNoteViewWithHeadline:headline body:note.text backgroundColor:[Note backgroundColorForNoteType:note.type] textColor:[Note textColorForNoteType:note.type]];
+            [self presentViewController:noteViewController animated:YES completion:nil];
+        }
+    }
+}
+
+#pragma mark - Utilities
+
+- (BOOL)hasBeenOneDay
+{
+    BOOL hasBeenOneDay = YES;
     
-    [self.view addSubview:noteView];
+//    NSString *lastSeenDateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"LastNoteSeenDateString"];
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+//    NSDate *lastSeenDate = [dateFormatter dateFromString:lastSeenDateString];
+//    NSDate *currentDate = [dateFormatter defaultDate];
     
-    POPSpringAnimation *springAnimation = [POPSpringAnimation animation];
-    springAnimation.property = [POPAnimatableProperty propertyWithName:kPOPViewFrame];
-    springAnimation.toValue = [NSValue valueWithCGRect:CGRectMake(20, 60, 325, 325)];
-    springAnimation.name = @"AnimateNoteOnScreen";
-    springAnimation.delegate = self;
-    springAnimation.springSpeed= 0.5f;
+//    NSDate *oneDayAgo = [[NSCalendar currentCalendar] dateByAddingUnit:NSCalendarUnitDay value:-1 toDate:[NSDate date] options:0];
     
-    [noteView pop_addAnimation:springAnimation forKey:@"AnimateNoteOnScreen"];
+    return hasBeenOneDay;
+}
+
+#pragma mark - UIViewControllerTransitionDelegate
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    return [[PresentingAnimationController alloc] init];
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    return [[DismissingAnimationController alloc] init];
 }
 
 @end
