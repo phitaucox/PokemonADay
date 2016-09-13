@@ -10,4 +10,7 @@
 
 @interface NoteVC : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *headlineLabel;
+
+
 @end

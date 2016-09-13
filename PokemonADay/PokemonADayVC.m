@@ -40,30 +40,6 @@
 
 - (IBAction)imageTapped:(UITapGestureRecognizer *)sender
 {
-//    NoteView *noteView = [[NoteView alloc] initWithFrame:CGRectZero];
-//    noteView.center = self.view.center;
-//    
-//    if ([self hasBeenOneDay])
-//    {
-//        Note *note = [[PADNotesManager sharedManager] fetchRandomUnseenNote];
-//        if (note)
-//        {
-//            NSString *headline = [Note headlineFromNoteType:note.type];
-//            [noteView fillNoteViewWithHeadline:headline body:note.text backgroundColor:[Note backgroundColorForNoteType:note.type] textColor:[Note textColorForNoteType:note.type]];
-//            
-//            [self.view addSubview:noteView];
-//            
-//            POPSpringAnimation *springAnimation = [POPSpringAnimation animation];
-//            springAnimation.property = [POPAnimatableProperty propertyWithName:kPOPViewFrame];
-//            springAnimation.toValue = [NSValue valueWithCGRect:CGRectMake(20, 60, 325, 325)];
-//            springAnimation.name = @"AnimateNoteOnScreen";
-//            springAnimation.delegate = self;
-//            springAnimation.springSpeed= 0.5f;
-//            
-//            [noteView pop_addAnimation:springAnimation forKey:@"AnimateNoteOnScreen"];
-//        }
-//    }
-    
     if ([self hasBeenOneDay])
     {
         Note *note = [[PADNotesManager sharedManager] fetchRandomUnseenNote];
@@ -81,8 +57,9 @@
 
             noteViewController.modalPresentationStyle = UIModalPresentationCustom;
             
-//            NSString *headline = [Note headlineFromNoteType:note.type];
+            NSString *headline = [Note headlineFromNoteType:note.type];
 //            [noteViewController fillNoteViewWithHeadline:headline body:note.text backgroundColor:[Note backgroundColorForNoteType:note.type] textColor:[Note textColorForNoteType:note.type]];
+            noteViewController.headlineLabel.text = headline;
             [self presentViewController:noteViewController animated:YES completion:nil];
         }
     }

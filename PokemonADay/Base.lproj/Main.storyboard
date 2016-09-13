@@ -56,10 +56,31 @@
                     <view key="view" contentMode="scaleToFill" id="76z-fk-L88">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hV-ph-WhH">
+                                <frame key="frameInset" minX="16" minY="28" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.98823529409999999" green="0.3921568627" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="XiF-5U-brE" appends="YES" id="Hcn-EE-r7e"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="headlineLabel" destination="7hV-ph-WhH" id="EKn-va-uqr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nV7-BX-Lz3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="XiF-5U-brE">
+                    <connections>
+                        <action selector="viewTapped:" destination="ftb-ip-nEe" id="f1Y-K0-xAK"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2681" y="376"/>
         </scene>

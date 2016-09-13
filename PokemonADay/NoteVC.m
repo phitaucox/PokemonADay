@@ -17,10 +17,10 @@
     self.view.layer.cornerRadius = 8.f;
 }
 
-//- (IBAction)closeButtonClick:(UIButton *)sender
-//{
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
+- (IBAction)viewTapped:(UITapGestureRecognizer *)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 /*
 #pragma mark - Navigation
