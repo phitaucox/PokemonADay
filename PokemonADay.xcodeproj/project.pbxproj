@@ -11,6 +11,7 @@
 		2F5221BB1D526CF0008A854C /* NoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F5221BA1D526CF0008A854C /* NoteView.xib */; };
 		2F5221BE1D526E1B008A854C /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5221BD1D526E1B008A854C /* NoteView.m */; };
 		2F7B34A51D735194000BB75D /* PADDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B34A41D735194000BB75D /* PADDataController.m */; };
+		2F7FA98F1D8E39A50012F78B /* NSDate+PADExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7FA98E1D8E39A50012F78B /* NSDate+PADExtensions.m */; };
 		2F9840751D7327970061E133 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9840741D7327970061E133 /* Note.m */; };
 		2F98407B1D73351D0061E133 /* carlyapp.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F98407A1D73351D0061E133 /* carlyapp.json */; };
 		2FD70BC41D4D3C7F00532CD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD70BC31D4D3C7F00532CD6 /* main.m */; };
@@ -32,6 +33,8 @@
 		2F5221BD1D526E1B008A854C /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
 		2F7B34A31D735194000BB75D /* PADDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PADDataController.h; sourceTree = "<group>"; };
 		2F7B34A41D735194000BB75D /* PADDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADDataController.m; sourceTree = "<group>"; };
+		2F7FA98D1D8E39A50012F78B /* NSDate+PADExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+PADExtensions.h"; sourceTree = "<group>"; };
+		2F7FA98E1D8E39A50012F78B /* NSDate+PADExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+PADExtensions.m"; sourceTree = "<group>"; };
 		2F9840731D7327970061E133 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		2F9840741D7327970061E133 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		2F98407A1D73351D0061E133 /* carlyapp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = carlyapp.json; path = ../../Documents/carlyapp.json; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 			children = (
 				2F9840731D7327970061E133 /* Note.h */,
 				2F9840741D7327970061E133 /* Note.m */,
+				2F7FA98D1D8E39A50012F78B /* NSDate+PADExtensions.h */,
+				2F7FA98E1D8E39A50012F78B /* NSDate+PADExtensions.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 				2F5221BE1D526E1B008A854C /* NoteView.m in Sources */,
 				2FD70BD01D4D3C7F00532CD6 /* PokemonADay.xcdatamodeld in Sources */,
 				2F7B34A51D735194000BB75D /* PADDataController.m in Sources */,
+				2F7FA98F1D8E39A50012F78B /* NSDate+PADExtensions.m in Sources */,
 				2FD70BCA1D4D3C7F00532CD6 /* PokemonADayVC.m in Sources */,
 				2F9840751D7327970061E133 /* Note.m in Sources */,
 				2F4795631D73747B003E00D8 /* PADNotesManager.m in Sources */,
