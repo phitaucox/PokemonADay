@@ -124,6 +124,13 @@
     return note;
 }
 
+- (NSArray <Note *> *)fetchSeenNotes
+{
+    NSPredicate *seenPredicate = [NSPredicate predicateWithFormat:@"hasBeenSeen == YES"];
+    
+    return [self fetchNotesWithPredicate:seenPredicate];
+}
+
 - (NSArray *)fetchNotesWithPredicate:(NSPredicate *)predicate
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Note"];

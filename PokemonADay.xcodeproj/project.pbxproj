@@ -12,6 +12,9 @@
 		2F5221BE1D526E1B008A854C /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5221BD1D526E1B008A854C /* NoteView.m */; };
 		2F7B34A51D735194000BB75D /* PADDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B34A41D735194000BB75D /* PADDataController.m */; };
 		2F7FA98F1D8E39A50012F78B /* NSDate+PADExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7FA98E1D8E39A50012F78B /* NSDate+PADExtensions.m */; };
+		2F7FA9921D8E59AE0012F78B /* PADCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7FA9911D8E59AE0012F78B /* PADCollectionViewController.m */; };
+		2F7FA9961D8E5E4F0012F78B /* PADCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7FA9941D8E5E4F0012F78B /* PADCollectionViewCell.m */; };
+		2F7FA9971D8E5E4F0012F78B /* PADCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7FA9951D8E5E4F0012F78B /* PADCollectionViewCell.xib */; };
 		2F9840751D7327970061E133 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9840741D7327970061E133 /* Note.m */; };
 		2F98407B1D73351D0061E133 /* carlyapp.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F98407A1D73351D0061E133 /* carlyapp.json */; };
 		2FD70BC41D4D3C7F00532CD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD70BC31D4D3C7F00532CD6 /* main.m */; };
@@ -35,6 +38,11 @@
 		2F7B34A41D735194000BB75D /* PADDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADDataController.m; sourceTree = "<group>"; };
 		2F7FA98D1D8E39A50012F78B /* NSDate+PADExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+PADExtensions.h"; sourceTree = "<group>"; };
 		2F7FA98E1D8E39A50012F78B /* NSDate+PADExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+PADExtensions.m"; sourceTree = "<group>"; };
+		2F7FA9901D8E59AE0012F78B /* PADCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PADCollectionViewController.h; sourceTree = "<group>"; };
+		2F7FA9911D8E59AE0012F78B /* PADCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADCollectionViewController.m; sourceTree = "<group>"; };
+		2F7FA9931D8E5E4F0012F78B /* PADCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PADCollectionViewCell.h; sourceTree = "<group>"; };
+		2F7FA9941D8E5E4F0012F78B /* PADCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADCollectionViewCell.m; sourceTree = "<group>"; };
+		2F7FA9951D8E5E4F0012F78B /* PADCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PADCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F9840731D7327970061E133 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		2F9840741D7327970061E133 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		2F98407A1D73351D0061E133 /* carlyapp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = carlyapp.json; path = ../../Documents/carlyapp.json; sourceTree = "<group>"; };
@@ -89,6 +97,8 @@
 				2FD70BC91D4D3C7F00532CD6 /* PokemonADayVC.m */,
 				2F7B34A31D735194000BB75D /* PADDataController.h */,
 				2F7B34A41D735194000BB75D /* PADDataController.m */,
+				2F7FA9901D8E59AE0012F78B /* PADCollectionViewController.h */,
+				2F7FA9911D8E59AE0012F78B /* PADCollectionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -110,6 +120,9 @@
 				2F5221BC1D526E1B008A854C /* NoteView.h */,
 				2F5221BD1D526E1B008A854C /* NoteView.m */,
 				2F5221BA1D526CF0008A854C /* NoteView.xib */,
+				2F7FA9931D8E5E4F0012F78B /* PADCollectionViewCell.h */,
+				2F7FA9941D8E5E4F0012F78B /* PADCollectionViewCell.m */,
+				2F7FA9951D8E5E4F0012F78B /* PADCollectionViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -234,6 +247,7 @@
 				2F98407B1D73351D0061E133 /* carlyapp.json in Resources */,
 				2FD70BD21D4D3C7F00532CD6 /* Assets.xcassets in Resources */,
 				2F5221BB1D526CF0008A854C /* NoteView.xib in Resources */,
+				2F7FA9971D8E5E4F0012F78B /* PADCollectionViewCell.xib in Resources */,
 				2FD70BCD1D4D3C7F00532CD6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +316,8 @@
 				2F4795631D73747B003E00D8 /* PADNotesManager.m in Sources */,
 				2FD70BC71D4D3C7F00532CD6 /* AppDelegate.m in Sources */,
 				2FD70BC41D4D3C7F00532CD6 /* main.m in Sources */,
+				2F7FA9921D8E59AE0012F78B /* PADCollectionViewController.m in Sources */,
+				2F7FA9961D8E5E4F0012F78B /* PADCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

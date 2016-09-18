@@ -17,5 +17,6 @@
 + (instancetype)sharedManager;
 
 - (Note *)fetchRandomUnseenNote;
+- (NSArray<Note *> *)fetchSeenNotes;
 
 @end
