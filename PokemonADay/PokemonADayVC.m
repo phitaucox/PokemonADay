@@ -65,13 +65,13 @@
     
     POPSpringAnimation *springAnimation = [POPSpringAnimation animation];
     springAnimation.property = [POPAnimatableProperty propertyWithName:kPOPViewFrame];
-    springAnimation.toValue = [NSValue valueWithCGRect:CGRectMake(20, 60, 325, 325)];
+    springAnimation.toValue = [NSValue valueWithCGRect:CGRectMake(20, 70, 325, 325)];
     springAnimation.name = @"AnimateNoteOnScreen";
     springAnimation.delegate = self;
     
     POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
     scaleAnimation.springBounciness = 20;
-    scaleAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.4)];
+    scaleAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.3)];
     
     [self.noteView pop_addAnimation:springAnimation forKey:@"AnimateNoteOnScreen"];
     [self.imageView.layer pop_addAnimation:scaleAnimation forKey:@"ScaleBulbasaur"];
