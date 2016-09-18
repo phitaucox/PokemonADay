@@ -74,7 +74,19 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wB9-Uq-giu">
                                         <frame key="frameInset" minX="8" width="327" height="567"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <mutableString key="text">afjds;fadsfaslfjdskl;fddddkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkddkkddkdkdkdkdkdkdkdkdkdkdkdkdkdafjds;fadsfaslfjdskl;fddddkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkddkkddkdkdkdkdkdkdkdkdkdkdkdkdkdafjds;fadsfaslfjdskl;fddddkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkddkkddkdkdkdkdkdkdkdkdkdkdkdkdkdafjds;fadsfaslfjdskl;fddddkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkddkkddkdkdkdkdkdkdkdkdkdkdkdkdkdafjds;fadsfaslfjdskl;fddddkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkddkkddkdkdkdkdkdkdkdkdkdkdkdkdkdafjds;fadsfaslfjdskl;fddddkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkddkkddkdkdkdkdkdkdkdkdkdkdkdkdkd</mutableString>
+                                        <mutableString key="text">Hey Carly,
+
+First off, I love you.
+
+Secondly, here's the deets on this app that was made for you and only you.
+
+Every day for 365 days, you'll be able to go in here and tap on Bulbasaur and he'll give you a new "Note".  I don't want to spoil anything, but lets just say these notes will have varying subjects.  If you ever want to go back and look at all of them, you can just tap on the History link at the top of the main screen and you can view all the ones you've seen.
+
+That's it.  Pretty simple.  I wanted to do some more complicated things, but time didn't really permit, and that's ok.  Maybe some day.
+
+Lastly, I hope you love the app.  Happy birthday.
+
+Love, Christian</mutableString>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
