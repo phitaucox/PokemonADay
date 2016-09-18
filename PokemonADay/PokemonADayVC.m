@@ -12,9 +12,11 @@
 #import "NoteView.h"
 #import "PADNotesManager.h"
 #import "Note.h"
+#import "NSDate+PADExtensions.h"
 
 @interface PokemonADayVC ()
 
+@property (nonatomic, strong) NoteView *noteView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
@@ -29,14 +31,37 @@
 
 - (IBAction)imageTapped:(UITapGestureRecognizer *)sender
 {
-    NoteView *noteView = [[NoteView alloc] initWithFrame:CGRectZero];
-    noteView.center = self.view.center;
+    if (self.noteView)
+    {
+        [self.noteView removeFromSuperview];
+        self.noteView = nil;
+    }
     
-    Note *note = [[PADNotesManager sharedManager] fetchRandomUnseenNote];
-    NSString *headline = [Note headlineFromNoteType:note.type];
-    [noteView fillNoteViewWithHeadline:headline body:note.text backgroundColor:[Note backgroundColorForNoteType:note.type] textColor:[Note textColorForNoteType:note.type]];
+    self.noteView = [[NoteView alloc] initWithFrame:CGRectZero];
+    self.noteView.center = self.view.center;
     
-    [self.view addSubview:noteView];
+    NSInteger hoursUntilNextNote = [self hoursUntilNextNote];
+    
+    if (hoursUntilNextNote < 1)
+    {
+        NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+        dayComponent.day = 1;
+        
+        NSDate *nextDate = [[NSCalendar currentCalendar] dateByAddingComponents:dayComponent toDate:[NSDate date] options:0];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:nextDate forKey:@"NoteFetchedDate"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        Note *note = [[PADNotesManager sharedManager] fetchRandomUnseenNote];
+        NSString *headline = [Note headlineFromNoteType:note.type];
+        [self.noteView fillNoteViewWithHeadline:headline body:note.text backgroundColor:[Note backgroundColorForNoteType:note.type] textColor:[Note textColorForNoteType:note.type]];
+    }
+    else
+    {
+        [self.noteView fillNoteViewWithHeadline:@"No cheating Carly..." body:[NSString stringWithFormat:@"You have %lu hours until you can see another note from Bulbasaur", hoursUntilNextNote] backgroundColor:[UIColor lightGrayColor] textColor:[UIColor darkTextColor]];
+    }
+    
+    [self.view addSubview:self.noteView];
     
     POPSpringAnimation *springAnimation = [POPSpringAnimation animation];
     springAnimation.property = [POPAnimatableProperty propertyWithName:kPOPViewFrame];
@@ -45,7 +70,19 @@
     springAnimation.delegate = self;
     springAnimation.springSpeed= 0.5f;
     
-    [noteView pop_addAnimation:springAnimation forKey:@"AnimateNoteOnScreen"];
+    [self.noteView pop_addAnimation:springAnimation forKey:@"AnimateNoteOnScreen"];
+}
+
+- (NSInteger)hoursUntilNextNote
+{
+    NSInteger hoursUntilNextNote = 0;
+    
+    NSDate *noteFetchedDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"NoteFetchedDate"];
+    
+    NSInteger secondsUntilNextNote = [[NSDate date] numberOfSecondsUntil:noteFetchedDate];
+    hoursUntilNextNote = secondsUntilNextNote / 60 / 60;
+    
+    return hoursUntilNextNote;
 }
 
 @end
