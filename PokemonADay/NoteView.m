@@ -8,6 +8,8 @@
 
 #import "NoteView.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @implementation NoteView
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -17,6 +19,8 @@
     {
         self = [[[NSBundle mainBundle] loadNibNamed: NSStringFromClass([self class]) owner:self options: nil] firstObject];
         
+        self.layer.cornerRadius = 9.f;
+        self.layer.masksToBounds = YES;
         self.frame = frame;
     }
     
@@ -28,10 +32,10 @@
     self.headlineLabel.text = headline;
     self.bodyLabel.text = body;
     
-    self.headlineLabel.backgroundColor = backgroundColor;
+    self.headlineView.backgroundColor = [backgroundColor colorWithAlphaComponent:0.75f];
     self.headlineLabel.textColor = textColor;
     
-    self.bodyLabel.backgroundColor = backgroundColor;
+    self.bodyView.backgroundColor = backgroundColor;
     self.bodyLabel.textColor = textColor;
 }
 

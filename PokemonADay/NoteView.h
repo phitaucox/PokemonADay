@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NoteView : UIStackView
+@interface NoteView : UIView
 
+@property (weak, nonatomic) IBOutlet UIView *headlineView;
+@property (weak, nonatomic) IBOutlet UIView *bodyView;
 @property (weak, nonatomic) IBOutlet UILabel *headlineLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bodyLabel;
 

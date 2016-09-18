@@ -68,9 +68,13 @@
     springAnimation.toValue = [NSValue valueWithCGRect:CGRectMake(20, 60, 325, 325)];
     springAnimation.name = @"AnimateNoteOnScreen";
     springAnimation.delegate = self;
-    springAnimation.springSpeed= 0.5f;
+    
+    POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+    scaleAnimation.springBounciness = 20;
+    scaleAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.4)];
     
     [self.noteView pop_addAnimation:springAnimation forKey:@"AnimateNoteOnScreen"];
+    [self.imageView.layer pop_addAnimation:scaleAnimation forKey:@"ScaleBulbasaur"];
 }
 
 - (NSInteger)hoursUntilNextNote
