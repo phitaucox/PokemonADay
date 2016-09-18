@@ -39,9 +39,16 @@
     self.noteView = [[NoteView alloc] initWithFrame:CGRectZero];
     self.noteView.center = self.view.center;
     
-    Note *note = [[PADNotesManager sharedManager] fetchRandomUnseenNote];
-    NSString *headline = [Note headlineFromNoteType:note.type];
-    [self.noteView fillNoteViewWithHeadline:headline body:note.text backgroundColor:[Note backgroundColorForNoteType:note.type] textColor:[Note textColorForNoteType:note.type]];
+    if ([self secondsUntilNextNote] < 1)
+    {
+        Note *note = [[PADNotesManager sharedManager] fetchRandomUnseenNote];
+        NSString *headline = [Note headlineFromNoteType:note.type];
+        [self.noteView fillNoteViewWithHeadline:headline body:note.text backgroundColor:[Note backgroundColorForNoteType:note.type] textColor:[Note textColorForNoteType:note.type]];
+    }
+    else
+    {
+        [self.noteView fillNoteViewWithHeadline:@"No cheating Carly..." body:[NSString stringWithFormat:@"You have %lu seconds until you can see another note from Bulbasaur.", [self secondsUntilNextNote]] backgroundColor:[UIColor lightGrayColor] textColor:[UIColor whiteColor]];
+    }
     
     [self.view addSubview:self.noteView];
     
@@ -53,6 +60,13 @@
     springAnimation.springSpeed= 0.5f;
     
     [self.noteView pop_addAnimation:springAnimation forKey:@"AnimateNoteOnScreen"];
+}
+
+- (NSUInteger)secondsUntilNextNote
+{
+    NSUInteger secondsUntilNextNote = 0;
+    
+    return secondsUntilNextNote;
 }
 
 @end
