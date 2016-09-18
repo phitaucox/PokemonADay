@@ -15,6 +15,7 @@
 
 @interface PokemonADayVC ()
 
+@property (nonatomic, strong) NoteView *noteView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
@@ -29,14 +30,20 @@
 
 - (IBAction)imageTapped:(UITapGestureRecognizer *)sender
 {
-    NoteView *noteView = [[NoteView alloc] initWithFrame:CGRectZero];
-    noteView.center = self.view.center;
+    if (self.noteView)
+    {
+        [self.noteView removeFromSuperview];
+        self.noteView = nil;
+    }
+    
+    self.noteView = [[NoteView alloc] initWithFrame:CGRectZero];
+    self.noteView.center = self.view.center;
     
     Note *note = [[PADNotesManager sharedManager] fetchRandomUnseenNote];
     NSString *headline = [Note headlineFromNoteType:note.type];
-    [noteView fillNoteViewWithHeadline:headline body:note.text backgroundColor:[Note backgroundColorForNoteType:note.type] textColor:[Note textColorForNoteType:note.type]];
+    [self.noteView fillNoteViewWithHeadline:headline body:note.text backgroundColor:[Note backgroundColorForNoteType:note.type] textColor:[Note textColorForNoteType:note.type]];
     
-    [self.view addSubview:noteView];
+    [self.view addSubview:self.noteView];
     
     POPSpringAnimation *springAnimation = [POPSpringAnimation animation];
     springAnimation.property = [POPAnimatableProperty propertyWithName:kPOPViewFrame];
@@ -45,7 +52,7 @@
     springAnimation.delegate = self;
     springAnimation.springSpeed= 0.5f;
     
-    [noteView pop_addAnimation:springAnimation forKey:@"AnimateNoteOnScreen"];
+    [self.noteView pop_addAnimation:springAnimation forKey:@"AnimateNoteOnScreen"];
 }
 
 @end
