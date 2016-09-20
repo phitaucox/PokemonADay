@@ -24,12 +24,6 @@ typedef NS_ENUM(int16_t, NoteType)
 
 @interface Note : NSManagedObject
 
-//@property (nonatomic, readonly) NSInteger ID;
-//@property (nonatomic, strong, readonly) NSString *text;
-//@property (nonatomic, readonly) NoteType type;
-
-//- (instancetype)initWithID:(NSInteger)ID text:(NSString *)text type:(NSString *)type;
-
 @property (nonatomic, strong) NSString *noteID;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, assign) NoteType type;
@@ -42,5 +36,7 @@ typedef NS_ENUM(int16_t, NoteType)
 + (UIColor *)backgroundColorForNoteType:(NoteType)noteType;
 
 + (UIColor *)textColorForNoteType:(NoteType)noteType;
+
++ (NSString *)endingStringOnNoteForNoteType:(NoteType)noteType;
 
 @end

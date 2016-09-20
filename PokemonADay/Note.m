@@ -126,7 +126,7 @@
 {
     UIColor *textColor = [UIColor darkTextColor];
     
-    if (noteType == AdjectiveAlphabet)
+    if (noteType == AdjectiveAlphabet || noteType == RememberWhen)
     {
         textColor = [UIColor whiteColor];
     }
@@ -134,6 +134,40 @@
     return textColor;
 }
 
-
++ (NSString *)endingStringOnNoteForNoteType:(NoteType)noteType
+{
+    NSString *endingString = @"";
+    
+    if (noteType == RememberWhen)
+    {
+        endingString = @" 😀";
+    }
+    else if (noteType == WeShould)
+    {
+        endingString = @" 👍";
+    }
+    else if (noteType == LoveReasons)
+    {
+        endingString = @" ❤️";
+    }
+    else if (noteType == QuotesAndLyrics)
+    {
+        endingString = @" 🎧";
+    }
+    else if (noteType == DirtyThings)
+    {
+        endingString = @" ☺️";
+    }
+    else if (noteType == AdjectiveAlphabet)
+    {
+        endingString = @" 😘";
+    }
+    else if (noteType == WeShouldDoDirtyThings)
+    {
+        endingString = @" 🤗";
+    }
+    
+    return endingString;
+}
 
 @end

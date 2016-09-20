@@ -13,8 +13,6 @@
 		2F7B34A51D735194000BB75D /* PADDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B34A41D735194000BB75D /* PADDataController.m */; };
 		2F7FA98F1D8E39A50012F78B /* NSDate+PADExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7FA98E1D8E39A50012F78B /* NSDate+PADExtensions.m */; };
 		2F7FA9921D8E59AE0012F78B /* PADCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7FA9911D8E59AE0012F78B /* PADCollectionViewController.m */; };
-		2F7FA9961D8E5E4F0012F78B /* PADCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7FA9941D8E5E4F0012F78B /* PADCollectionViewCell.m */; };
-		2F7FA9971D8E5E4F0012F78B /* PADCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7FA9951D8E5E4F0012F78B /* PADCollectionViewCell.xib */; };
 		2F9840751D7327970061E133 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9840741D7327970061E133 /* Note.m */; };
 		2F98407B1D73351D0061E133 /* carlyapp.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F98407A1D73351D0061E133 /* carlyapp.json */; };
 		2FD70BC41D4D3C7F00532CD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD70BC31D4D3C7F00532CD6 /* main.m */; };
@@ -24,6 +22,8 @@
 		2FD70BD01D4D3C7F00532CD6 /* PokemonADay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FD70BCE1D4D3C7F00532CD6 /* PokemonADay.xcdatamodeld */; };
 		2FD70BD21D4D3C7F00532CD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FD70BD11D4D3C7F00532CD6 /* Assets.xcassets */; };
 		2FD70BD51D4D3C7F00532CD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD70BD31D4D3C7F00532CD6 /* LaunchScreen.storyboard */; };
+		2FDDC1601D90BFF9008AABFF /* PADCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDDC15E1D90BFF9008AABFF /* PADCollectionViewCell.m */; };
+		2FDDC1611D90BFF9008AABFF /* PADCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDDC15F1D90BFF9008AABFF /* PADCollectionViewCell.xib */; };
 		D74AE29DFB932E7F66C70D83 /* libPods-PokemonADay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEE24EDFB144DC4F3DAE8B4 /* libPods-PokemonADay.a */; };
 /* End PBXBuildFile section */
 
@@ -40,9 +40,6 @@
 		2F7FA98E1D8E39A50012F78B /* NSDate+PADExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+PADExtensions.m"; sourceTree = "<group>"; };
 		2F7FA9901D8E59AE0012F78B /* PADCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PADCollectionViewController.h; sourceTree = "<group>"; };
 		2F7FA9911D8E59AE0012F78B /* PADCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADCollectionViewController.m; sourceTree = "<group>"; };
-		2F7FA9931D8E5E4F0012F78B /* PADCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PADCollectionViewCell.h; sourceTree = "<group>"; };
-		2F7FA9941D8E5E4F0012F78B /* PADCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADCollectionViewCell.m; sourceTree = "<group>"; };
-		2F7FA9951D8E5E4F0012F78B /* PADCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PADCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F9840731D7327970061E133 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		2F9840741D7327970061E133 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		2F98407A1D73351D0061E133 /* carlyapp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = carlyapp.json; path = ../../Documents/carlyapp.json; sourceTree = "<group>"; };
@@ -57,6 +54,9 @@
 		2FD70BD11D4D3C7F00532CD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FD70BD41D4D3C7F00532CD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FD70BD61D4D3C7F00532CD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FDDC15D1D90BFF9008AABFF /* PADCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PADCollectionViewCell.h; sourceTree = "<group>"; };
+		2FDDC15E1D90BFF9008AABFF /* PADCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADCollectionViewCell.m; sourceTree = "<group>"; };
+		2FDDC15F1D90BFF9008AABFF /* PADCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PADCollectionViewCell.xib; sourceTree = "<group>"; };
 		593A786FD87D7918664739C6 /* Pods-PokemonADay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonADay.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokemonADay/Pods-PokemonADay.release.xcconfig"; sourceTree = "<group>"; };
 		93D23B7925059EFFB1F7B75B /* Pods-PokemonADay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonADay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokemonADay/Pods-PokemonADay.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,9 +120,9 @@
 				2F5221BC1D526E1B008A854C /* NoteView.h */,
 				2F5221BD1D526E1B008A854C /* NoteView.m */,
 				2F5221BA1D526CF0008A854C /* NoteView.xib */,
-				2F7FA9931D8E5E4F0012F78B /* PADCollectionViewCell.h */,
-				2F7FA9941D8E5E4F0012F78B /* PADCollectionViewCell.m */,
-				2F7FA9951D8E5E4F0012F78B /* PADCollectionViewCell.xib */,
+				2FDDC15D1D90BFF9008AABFF /* PADCollectionViewCell.h */,
+				2FDDC15E1D90BFF9008AABFF /* PADCollectionViewCell.m */,
+				2FDDC15F1D90BFF9008AABFF /* PADCollectionViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 				TargetAttributes = {
 					2FD70BBE1D4D3C7F00532CD6 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 9NXYG6U592;
+						DevelopmentTeam = B2NJKYXKCZ;
 					};
 				};
 			};
@@ -247,7 +247,7 @@
 				2F98407B1D73351D0061E133 /* carlyapp.json in Resources */,
 				2FD70BD21D4D3C7F00532CD6 /* Assets.xcassets in Resources */,
 				2F5221BB1D526CF0008A854C /* NoteView.xib in Resources */,
-				2F7FA9971D8E5E4F0012F78B /* PADCollectionViewCell.xib in Resources */,
+				2FDDC1611D90BFF9008AABFF /* PADCollectionViewCell.xib in Resources */,
 				2FD70BCD1D4D3C7F00532CD6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,8 +316,8 @@
 				2F4795631D73747B003E00D8 /* PADNotesManager.m in Sources */,
 				2FD70BC71D4D3C7F00532CD6 /* AppDelegate.m in Sources */,
 				2FD70BC41D4D3C7F00532CD6 /* main.m in Sources */,
+				2FDDC1601D90BFF9008AABFF /* PADCollectionViewCell.m in Sources */,
 				2F7FA9921D8E59AE0012F78B /* PADCollectionViewController.m in Sources */,
-				2F7FA9961D8E5E4F0012F78B /* PADCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +436,7 @@
 			baseConfigurationReference = 93D23B7925059EFFB1F7B75B /* Pods-PokemonADay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9NXYG6U592;
+				DEVELOPMENT_TEAM = B2NJKYXKCZ;
 				INFOPLIST_FILE = PokemonADay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccox.PokemonADay;
@@ -449,7 +449,7 @@
 			baseConfigurationReference = 593A786FD87D7918664739C6 /* Pods-PokemonADay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9NXYG6U592;
+				DEVELOPMENT_TEAM = B2NJKYXKCZ;
 				INFOPLIST_FILE = PokemonADay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccox.PokemonADay;

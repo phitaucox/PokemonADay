@@ -40,7 +40,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="History" id="sFw-Fr-QTK">
                             <connections>
-                                <segue destination="mUH-nY-ETO" kind="show" id="3Ua-zP-Dsf"/>
+                                <segue destination="ng7-ni-F7p" kind="show" id="FU7-kI-rSN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -56,6 +56,14 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2817" y="269"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="KXB-Zt-M8Y">
+            <objects>
+                <viewController id="ng7-ni-F7p" customClass="PADCollectionViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xUf-HK-9BZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2073" y="269"/>
         </scene>
         <!--Deets VC-->
         <scene sceneID="pxZ-vx-eHz">
@@ -74,7 +82,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wB9-Uq-giu">
                                         <frame key="frameInset" minX="8" width="327" height="567"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <mutableString key="text">Hey Carly,
+                                        <string key="text">Hey Carly,
 
 First off, I love you.
 
@@ -86,15 +94,15 @@ That's it.  Pretty simple.  I wanted to do some more complicated things, but tim
 
 Lastly, I hope you love the app.  Happy birthday.
 
-Love, Christian</mutableString>
+Love, Christian</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.67450980390000004" green="0.98823529409999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.3921568627" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.67450980392156867" green="0.9882352941176471" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.98823529409999999" green="0.3921568627" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="p86-Oe-uoD" firstAttribute="top" secondItem="h0l-tD-wXE" secondAttribute="bottom" constant="8" symbolic="YES" id="DDK-C1-Rqk"/>
                             <constraint firstItem="p86-Oe-uoD" firstAttribute="trailing" secondItem="2GS-Di-Jdt" secondAttribute="trailingMargin" id="bZZ-BP-9gq"/>
@@ -110,7 +118,6 @@ Love, Christian</mutableString>
         <!--Navigation Controller-->
         <scene sceneID="2af-g6-nBC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tzb-uv-WA8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="6hH-3m-b2A" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Ir-uc-ESG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -120,42 +127,9 @@ Love, Christian</mutableString>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sZF-LX-Lbf"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tzb-uv-WA8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3596" y="269"/>
-        </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="i5J-fL-KnA">
-            <objects>
-                <collectionViewController id="mUH-nY-ETO" customClass="PADCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="WVc-VH-8nn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.67450980390000004" green="0.98823529409999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qqh-Om-GEA">
-                            <size key="itemSize" width="160" height="160"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PADNoteCell" id="J5D-S9-IXV" customClass="PADCollectionViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="mUH-nY-ETO" id="1o8-Do-hbq"/>
-                            <outlet property="delegate" destination="mUH-nY-ETO" id="2Fr-rU-aub"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JwM-eR-tIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2071" y="269"/>
         </scene>
     </scenes>
     <resources>

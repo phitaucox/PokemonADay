@@ -59,8 +59,8 @@
 {
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
     {
-        //        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
-        //        [[NSUserDefaults standardUserDefaults] synchronize];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         
         // grab json file path
         NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:@"carlyapp" ofType:@"json"];
@@ -118,8 +118,11 @@
     NSPredicate *randomPredicate = [NSPredicate predicateWithFormat:@"noteID == %lu", r];
     NSArray *fetchedNotes = [self fetchNotesWithPredicate:randomPredicate];
     Note *note = [fetchedNotes firstObject];
-    note.hasBeenSeen = YES;
-    [[[PADDataController sharedInstance] managedObjectContext] refreshObject:note mergeChanges:YES];
+    if (note)
+    {
+        note.hasBeenSeen = YES;
+        [[[PADDataController sharedInstance] managedObjectContext] refreshObject:note mergeChanges:YES];
+    }
     
     return note;
 }

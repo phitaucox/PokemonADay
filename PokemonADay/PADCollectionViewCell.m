@@ -2,7 +2,7 @@
 //  PADCollectionViewCell.m
 //  PokemonADay
 //
-//  Created by Cox, Christian on 9/18/16.
+//  Created by Cox, Christian on 9/19/16.
 //  Copyright © 2016 Cox, Christian. All rights reserved.
 //
 
@@ -10,10 +10,11 @@
 
 @implementation PADCollectionViewCell
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    self.layer.cornerRadius = 9.f;
+    self.layer.masksToBounds = YES;
 }
 
 @end

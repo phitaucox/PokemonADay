@@ -20,17 +20,35 @@
 
 @implementation PADCollectionViewController
 
-static NSString * const reuseIdentifier = @"PADNoteCell";
+static NSString * const reuseIdentifier = @"PADCollectionViewCell";
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        flowLayout.minimumLineSpacing = 5;
+        flowLayout.minimumInteritemSpacing = 0;
+        flowLayout.sectionInset = UIEdgeInsetsMake(10, 25, 20, 25);
+        flowLayout.itemSize = CGSizeMake(160.f, 160.f);
+        
+        // Set up the collection view
+        self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+        self.collectionView.delegate = self;
+        self.collectionView.dataSource = self;
+        self.collectionView.backgroundColor = [UIColor colorWithRed:0.67 green:0.99 blue:0.85 alpha:1.0];
+        
+        [self.collectionView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
-    [self.collectionView registerClass:[PADCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     self.seenNotes = [[PADNotesManager sharedManager] fetchSeenNotes];
 }
@@ -53,20 +71,19 @@ static NSString * const reuseIdentifier = @"PADNoteCell";
     PADCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     Note *note = self.seenNotes[indexPath.item];
+
+    cell.layer.borderWidth = 1.f;
+    cell.layer.borderColor = [UIColor darkGrayColor].CGColor;
     
-    cell.noteLabel.text = note.text;
+    cell.headerView.backgroundColor = [[Note backgroundColorForNoteType:note.type] colorWithAlphaComponent:0.75f];
+    cell.headerLabel.text = [Note headlineFromNoteType:note.type];
+    cell.headerLabel.textColor = [Note textColorForNoteType:note.type];
+    
+    cell.bodyView.backgroundColor = [Note backgroundColorForNoteType:note.type];
+    cell.bodyLabel.text = note.text;
+    cell.bodyLabel.textColor = [Note textColorForNoteType:note.type];
     
     return cell;
 }
-
-#pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath 
-{
-    return YES;
-}
-*/
 
 @end
