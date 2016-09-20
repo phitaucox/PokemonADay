@@ -65,7 +65,11 @@
         {
             if ([[self.notesManager fetchSeenNotes] count] >= 365)
             {
-                [self.noteView fillNoteViewWithHeadline:@"All done..." body:@"Bulbasaur doesn't have any more Notes for you. Be sure to check out the History any time you want though. Hope you enjoyed reading all these." backgroundColor:[UIColor greenColor] textColor:[UIColor lightTextColor]];
+                [self.noteView fillNoteViewWithHeadline:@"All done..." body:@"Bulbasaur doesn't have any more Notes for you. Be sure to check out the History any time you want though. Hope you enjoyed reading all these." backgroundColor:[UIColor blueColor] textColor:[UIColor darkTextColor]];
+            }
+            else
+            {
+                [self.noteView fillNoteViewWithHeadline:@"Bulbas..." body:@"Your fav Pokémon Bulbasur accidentally couldn't find what your note for whatever reason. Give it another shot." backgroundColor:[UIColor greenColor] textColor:[UIColor darkTextColor]];
             }
         }
         else
@@ -99,7 +103,7 @@
     
     POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
     scaleAnimation.springBounciness = 5;
-    scaleAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.22)];
+    scaleAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(1.1, 1.2)];
     
     [self.noteView pop_addAnimation:springAnimation forKey:@"AnimateNoteOnScreen"];
     [self.imageView.layer pop_addAnimation:scaleAnimation forKey:@"ScaleBulbasaur"];
