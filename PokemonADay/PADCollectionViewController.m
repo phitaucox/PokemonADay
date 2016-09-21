@@ -86,4 +86,13 @@ static NSString * const reuseIdentifier = @"PADCollectionViewCell";
     return cell;
 }
 
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    Note *note = self.seenNotes[indexPath.item];
+    
+    NSLog(@"note: %@", note);
+}
+
 @end
