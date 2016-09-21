@@ -13,6 +13,7 @@
 #import "PADCollectionViewCell.h"
 #import "PresentingAnimationController.h"
 #import "DismissingAnimationController.h"
+#import "NoteModalViewController.h"
 
 @interface PADCollectionViewController ()
 
@@ -95,6 +96,26 @@ static NSString * const reuseIdentifier = @"PADCollectionViewCell";
     Note *note = self.seenNotes[indexPath.item];
     
     NSLog(@"note: %@", note);
+    
+    NoteModalViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"noteModal"];
+    
+    modalVC.transitioningDelegate = self;
+    
+    modalVC.modalPresentationStyle = UIModalPresentationCustom;
+    
+    [self.navigationController presentViewController:modalVC animated:YES completion:nil];
+}
+
+#pragma mark - UIViewControllerTransitionDelegate -
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    return [[PresentingAnimationController alloc] init];
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    return [[DismissingAnimationController alloc] init];
 }
 
 @end

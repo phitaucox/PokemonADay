@@ -15,6 +15,7 @@
 		2F7FA9921D8E59AE0012F78B /* PADCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7FA9911D8E59AE0012F78B /* PADCollectionViewController.m */; };
 		2F9719E91D92B6A600670637 /* DismissingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9719E81D92B6A600670637 /* DismissingAnimationController.m */; };
 		2F9719EC1D92B73300670637 /* PresentingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9719EB1D92B73300670637 /* PresentingAnimationController.m */; };
+		2F9719EF1D92BA8F00670637 /* NoteModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9719EE1D92BA8F00670637 /* NoteModalViewController.m */; };
 		2F9840751D7327970061E133 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9840741D7327970061E133 /* Note.m */; };
 		2F98407B1D73351D0061E133 /* carlyapp.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F98407A1D73351D0061E133 /* carlyapp.json */; };
 		2FD70BC41D4D3C7F00532CD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD70BC31D4D3C7F00532CD6 /* main.m */; };
@@ -46,6 +47,8 @@
 		2F9719E81D92B6A600670637 /* DismissingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissingAnimationController.m; sourceTree = "<group>"; };
 		2F9719EA1D92B73300670637 /* PresentingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentingAnimationController.h; sourceTree = "<group>"; };
 		2F9719EB1D92B73300670637 /* PresentingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentingAnimationController.m; sourceTree = "<group>"; };
+		2F9719ED1D92BA8F00670637 /* NoteModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteModalViewController.h; sourceTree = "<group>"; };
+		2F9719EE1D92BA8F00670637 /* NoteModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteModalViewController.m; sourceTree = "<group>"; };
 		2F9840731D7327970061E133 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		2F9840741D7327970061E133 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		2F98407A1D73351D0061E133 /* carlyapp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = carlyapp.json; path = ../../Documents/carlyapp.json; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				2F7B34A41D735194000BB75D /* PADDataController.m */,
 				2F7FA9901D8E59AE0012F78B /* PADCollectionViewController.h */,
 				2F7FA9911D8E59AE0012F78B /* PADCollectionViewController.m */,
+				2F9719ED1D92BA8F00670637 /* NoteModalViewController.h */,
+				2F9719EE1D92BA8F00670637 /* NoteModalViewController.m */,
 				2F9719E71D92B6A600670637 /* DismissingAnimationController.h */,
 				2F9719E81D92B6A600670637 /* DismissingAnimationController.m */,
 				2F9719EA1D92B73300670637 /* PresentingAnimationController.h */,
@@ -323,6 +328,7 @@
 				2F7FA98F1D8E39A50012F78B /* NSDate+PADExtensions.m in Sources */,
 				2F9719E91D92B6A600670637 /* DismissingAnimationController.m in Sources */,
 				2FD70BCA1D4D3C7F00532CD6 /* PokemonADayVC.m in Sources */,
+				2F9719EF1D92BA8F00670637 /* NoteModalViewController.m in Sources */,
 				2F9840751D7327970061E133 /* Note.m in Sources */,
 				2F4795631D73747B003E00D8 /* PADNotesManager.m in Sources */,
 				2F9719EC1D92B73300670637 /* PresentingAnimationController.m in Sources */,

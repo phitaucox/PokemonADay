@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PADCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface PADCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerTransitioningDelegate>
 
 @end
