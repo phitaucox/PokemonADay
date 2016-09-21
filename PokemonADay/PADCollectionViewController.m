@@ -11,6 +11,8 @@
 #import "Note.h"
 #import "PADNotesManager.h"
 #import "PADCollectionViewCell.h"
+#import "PresentingAnimationController.h"
+#import "DismissingAnimationController.h"
 
 @interface PADCollectionViewController ()
 
