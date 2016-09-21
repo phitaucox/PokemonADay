@@ -57,7 +57,7 @@
     self.noteView.center = self.view.center;
     
     NSInteger hoursUntilNextNote = [self hoursUntilNextNote];
-    hoursUntilNextNote = 0;
+    
     if (hoursUntilNextNote < 1)
     {
         Note *note = [self.notesManager fetchRandomUnseenNote];
