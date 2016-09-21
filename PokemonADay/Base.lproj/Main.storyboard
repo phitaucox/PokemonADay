@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6hH-3m-b2A">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--PokemonA DayVC-->
@@ -15,23 +16,34 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bulbasaurApp" translatesAutoresizingMaskIntoConstraints="NO" id="cHe-Fu-u32">
-                                <rect key="frame" x="330" y="330" width="250" height="250"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="JKP-Cr-q2S" appends="YES" id="xUP-Zb-B1l"/>
                                 </connections>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.67450980390000004" green="0.98823529409999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.67450980390000004" green="0.98823529409999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cHe-Fu-u32" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="2tG-ot-DoY"/>
                             <constraint firstAttribute="bottom" secondItem="cHe-Fu-u32" secondAttribute="bottom" constant="20" symbolic="YES" id="J9f-SG-go5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Wyk-5u-hv2">
+                        <barButtonItem key="leftBarButtonItem" title="Deets" id="74G-q2-Vhi">
+                            <connections>
+                                <segue destination="IG4-jM-Gtb" kind="show" id="4bi-Tb-fUr"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="History" id="sFw-Fr-QTK">
+                            <connections>
+                                <segue destination="ng7-ni-F7p" kind="show" id="FU7-kI-rSN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="cHe-Fu-u32" id="cqX-O1-dz0"/>
                     </connections>
@@ -43,10 +55,84 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-356" y="389"/>
+            <point key="canvasLocation" x="-2817" y="269"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="KXB-Zt-M8Y">
+            <objects>
+                <viewController id="ng7-ni-F7p" customClass="PADCollectionViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xUf-HK-9BZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2073" y="269"/>
+        </scene>
+        <!--Deets VC-->
+        <scene sceneID="pxZ-vx-eHz">
+            <objects>
+                <viewController title="Deets VC" id="IG4-jM-Gtb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h0l-tD-wXE"/>
+                        <viewControllerLayoutGuide type="bottom" id="66A-oR-Zr9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2GS-Di-Jdt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p86-Oe-uoD">
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wB9-Uq-giu">
+                                        <frame key="frameInset" minX="8" width="327" height="567"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Hey Carly,
+
+First off, I love you.
+
+Secondly, here's the deets on this app that was made for you and only you.
+
+Every day for 365 days, you'll be able to go in here and tap on Bulbasaur and he'll give you a new "Note".  I don't want to spoil anything, but lets just say these notes will have varying subjects.  If you ever want to go back and look at all of them, you can just tap on the History link at the top of the main screen and you can view all the ones you've seen.
+
+That's it.  Pretty simple.  I wanted to do some more complicated things, but time didn't really permit, and that's ok.  Maybe some day.
+
+Lastly, I hope you love the app.  Happy birthday.
+
+Love, Christian</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.3921568627" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98823529409999999" green="0.3921568627" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="p86-Oe-uoD" firstAttribute="top" secondItem="h0l-tD-wXE" secondAttribute="bottom" constant="8" symbolic="YES" id="DDK-C1-Rqk"/>
+                            <constraint firstItem="p86-Oe-uoD" firstAttribute="trailing" secondItem="2GS-Di-Jdt" secondAttribute="trailingMargin" id="bZZ-BP-9gq"/>
+                            <constraint firstAttribute="bottom" secondItem="p86-Oe-uoD" secondAttribute="bottom" constant="20" symbolic="YES" id="nSg-sV-nVf"/>
+                            <constraint firstItem="p86-Oe-uoD" firstAttribute="leading" secondItem="2GS-Di-Jdt" secondAttribute="leadingMargin" id="npa-um-wbU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wdQ-Cq-lEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2818.4000000000001" y="986.35682158920542"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2af-g6-nBC">
+            <objects>
+                <navigationController id="6hH-3m-b2A" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Ir-uc-ESG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sZF-LX-Lbf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tzb-uv-WA8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3596" y="269"/>
         </scene>
     </scenes>
     <resources>
-        <image name="bulbasaurApp" width="250" height="250"/>
+        <image name="bulbasaurApp" width="250" height="249"/>
     </resources>
 </document>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PADCollectionViewCell" id="gTV-IL-0wX" customClass="PADCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z5g-Mp-OmQ" userLabel="Header">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWH-Yt-IFe">
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.67450980390000004" green="0.98823529409999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NWH-Yt-IFe" firstAttribute="leading" secondItem="z5g-Mp-OmQ" secondAttribute="leading" constant="4" id="CKt-Fb-GuM"/>
+                            <constraint firstAttribute="height" constant="30" id="HHx-Ut-Jcl"/>
+                            <constraint firstItem="NWH-Yt-IFe" firstAttribute="centerY" secondItem="z5g-Mp-OmQ" secondAttribute="centerY" id="SMC-v9-iC7"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NWH-Yt-IFe" secondAttribute="trailing" constant="4" id="qrl-xH-NLV"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fub-R1-hIk" userLabel="Body">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAt-TI-ZSh">
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98823529409999999" green="0.3921568627" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dAt-TI-ZSh" firstAttribute="leading" secondItem="fub-R1-hIk" secondAttribute="leading" constant="8" id="ZVe-xl-aAf"/>
+                            <constraint firstAttribute="height" constant="131" id="jlA-As-VFq"/>
+                            <constraint firstItem="dAt-TI-ZSh" firstAttribute="centerY" secondItem="fub-R1-hIk" secondAttribute="centerY" id="lOX-bP-Q2f"/>
+                            <constraint firstAttribute="trailing" secondItem="dAt-TI-ZSh" secondAttribute="trailing" constant="8" id="oBc-Sd-T1P"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="z5g-Mp-OmQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OOx-pA-mf0"/>
+                <constraint firstItem="fub-R1-hIk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="U1M-aT-7WC"/>
+                <constraint firstAttribute="bottom" secondItem="fub-R1-hIk" secondAttribute="bottom" id="VQ3-J6-bH4"/>
+                <constraint firstItem="z5g-Mp-OmQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ctK-7p-KZy"/>
+                <constraint firstAttribute="trailing" secondItem="fub-R1-hIk" secondAttribute="trailing" id="f41-QW-LAq"/>
+                <constraint firstAttribute="trailing" secondItem="z5g-Mp-OmQ" secondAttribute="trailing" id="n6x-PC-JYH"/>
+            </constraints>
+            <connections>
+                <outlet property="bodyLabel" destination="dAt-TI-ZSh" id="j1I-Ux-Ln2"/>
+                <outlet property="bodyView" destination="fub-R1-hIk" id="zaw-0c-q1n"/>
+                <outlet property="headerLabel" destination="NWH-Yt-IFe" id="Z50-cG-7QN"/>
+                <outlet property="headerView" destination="z5g-Mp-OmQ" id="fDN-Ap-u3D"/>
+            </connections>
+            <point key="canvasLocation" x="-101" y="-15"/>
+        </collectionViewCell>
+    </objects>
+</document>
