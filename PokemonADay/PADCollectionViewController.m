@@ -11,6 +11,9 @@
 #import "Note.h"
 #import "PADNotesManager.h"
 #import "PADCollectionViewCell.h"
+#import "PresentingAnimationController.h"
+#import "DismissingAnimationController.h"
+#import "NoteModalViewController.h"
 
 @interface PADCollectionViewController ()
 
@@ -84,6 +87,35 @@ static NSString * const reuseIdentifier = @"PADCollectionViewCell";
     cell.bodyLabel.textColor = [Note textColorForNoteType:note.type];
     
     return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    Note *note = self.seenNotes[indexPath.item];
+    
+    NoteModalViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"noteModal"];
+    
+    modalVC.note = note;
+    
+    modalVC.transitioningDelegate = self;
+    
+    modalVC.modalPresentationStyle = UIModalPresentationCustom;
+    
+    [self.navigationController presentViewController:modalVC animated:YES completion:nil];
+}
+
+#pragma mark - UIViewControllerTransitionDelegate -
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    return [[PresentingAnimationController alloc] init];
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    return [[DismissingAnimationController alloc] init];
 }
 
 @end

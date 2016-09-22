@@ -65,6 +65,38 @@
             </objects>
             <point key="canvasLocation" x="-2073" y="269"/>
         </scene>
+        <!--Note Modal-->
+        <scene sceneID="SdW-KI-QgY">
+            <objects>
+                <viewController storyboardIdentifier="noteModal" id="gVK-pS-SAv" userLabel="Note Modal" customClass="NoteModalViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VQa-M7-Asp"/>
+                        <viewControllerLayoutGuide type="bottom" id="uef-MS-uP3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NtH-Qp-Jdt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.98823529409999999" green="0.3921568627" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="zK1-QK-YKH" appends="YES" id="C2y-J5-xht"/>
+                            <outletCollection property="gestureRecognizers" destination="CI6-OY-81q" appends="YES" id="heW-NR-vxa"/>
+                        </connections>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Dd-3X-Mfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="zK1-QK-YKH"/>
+                <swipeGestureRecognizer direction="up" id="CI6-OY-81q">
+                    <connections>
+                        <action selector="swipeUpRecognized:" destination="gVK-pS-SAv" id="qcw-pM-vBH"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1322" y="269"/>
+        </scene>
         <!--Deets VC-->
         <scene sceneID="pxZ-vx-eHz">
             <objects>
