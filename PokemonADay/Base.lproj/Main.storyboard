@@ -83,6 +83,9 @@
                             <outletCollection property="gestureRecognizers" destination="CI6-OY-81q" appends="YES" id="heW-NR-vxa"/>
                         </connections>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Dd-3X-Mfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pinchGestureRecognizer id="zK1-QK-YKH"/>

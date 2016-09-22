@@ -8,6 +8,8 @@
 
 #import "NoteModalViewController.h"
 
+#import "NoteView.h"
+
 @interface NoteModalViewController ()
 
 @end
@@ -18,6 +20,11 @@
     [super viewDidLoad];
     
     self.view.layer.cornerRadius = 9.f;
+    
+    if (self.note)
+    {
+        [self buildNoteView];
+    }
 }
 
 - (IBAction)swipeUpRecognized:(UISwipeGestureRecognizer *)sender
@@ -25,14 +32,16 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)buildNoteView
+{
+    NoteView *noteView = [[NoteView alloc] initWithFrame:CGRectMake(0, 0, 275.f, 357.f)];
+    
+    NSString *headline = [Note headlineFromNoteType:self.note.type];
+    NSString *noteText = [NSString stringWithFormat:@"%@%@", self.note.text, [Note endingStringOnNoteForNoteType:self.note.type]];
+    
+    [noteView fillNoteViewWithHeadline:headline body:noteText backgroundColor:[Note backgroundColorForNoteType:self.note.type] textColor:[Note textColorForNoteType:self.note.type]];
+    
+    [self.view addSubview:noteView];
 }
-*/
 
 @end

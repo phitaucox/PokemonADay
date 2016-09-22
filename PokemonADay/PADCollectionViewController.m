@@ -99,6 +99,8 @@ static NSString * const reuseIdentifier = @"PADCollectionViewCell";
     
     NoteModalViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"noteModal"];
     
+    modalVC.note = note;
+    
     modalVC.transitioningDelegate = self;
     
     modalVC.modalPresentationStyle = UIModalPresentationCustom;

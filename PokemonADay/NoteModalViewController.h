@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Note.h"
+
 @interface NoteModalViewController : UIViewController
+
+@property (nonatomic, strong) Note *note;
 
 @end
