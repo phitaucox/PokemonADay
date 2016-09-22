@@ -95,8 +95,6 @@ static NSString * const reuseIdentifier = @"PADCollectionViewCell";
 {
     Note *note = self.seenNotes[indexPath.item];
     
-    NSLog(@"note: %@", note);
-    
     NoteModalViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"noteModal"];
     
     modalVC.note = note;
