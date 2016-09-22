@@ -30,9 +30,25 @@
     if (self)
     {
         self.notesManager = [PADNotesManager sharedManager];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
     }
     
     return self;
+}
+
+- (void)applicationDidEnterBackground:(NSNotification *)notification
+{
+    if (self.noteView)
+    {
+        [self.noteView removeFromSuperview];
+        self.noteView = nil;
+    }
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
 }
 
 - (PADNotesManager *)notesManager
@@ -60,16 +76,18 @@
     
     if (hoursUntilNextNote < 1)
     {
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        
         Note *note = [self.notesManager fetchRandomUnseenNote];
         if (!note)
         {
             if ([[self.notesManager fetchSeenNotes] count] >= 365)
             {
-                [self.noteView fillNoteViewWithHeadline:@"All done..." body:@"Bulbasaur doesn't have any more Notes for you. Be sure to check out the History any time you want though. Hope you enjoyed reading all these." backgroundColor:[UIColor blueColor] textColor:[UIColor darkTextColor]];
+                [self.noteView fillNoteViewWithHeadline:@"All done..." body:@"Bulbasaur doesn't have any more notes for you. Be sure to check out the History any time you want though. Hope you enjoyed reading all these." backgroundColor:[UIColor blueColor] textColor:[UIColor darkTextColor]];
             }
             else
             {
-                [self.noteView fillNoteViewWithHeadline:@"Bulbas..." body:@"Your fav Pokémon Bulbasur accidentally couldn't find what your note for whatever reason. Give it another shot." backgroundColor:[UIColor greenColor] textColor:[UIColor darkTextColor]];
+                [self.noteView fillNoteViewWithHeadline:@"Bulbas..." body:@"Your fav Pokémon Bulbasaur accidentally couldn't find your note for whatever reason. Give it another tap." backgroundColor:[UIColor greenColor] textColor:[UIColor darkTextColor]];
             }
         }
         else
@@ -81,6 +99,8 @@
             
             [[NSUserDefaults standardUserDefaults] setObject:nextDate forKey:@"NoteFetchedDate"];
             [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            [self scheduleLocalNotificationForDate:nextDate];
             
             NSString *headline = [Note headlineFromNoteType:note.type];
             NSString *noteText = [NSString stringWithFormat:@"%@%@", note.text, [Note endingStringOnNoteForNoteType:note.type]];
@@ -119,6 +139,26 @@
     hoursUntilNextNote = secondsUntilNextNote / 60 / 60;
     
     return hoursUntilNextNote;
+}
+
+- (void)scheduleLocalNotificationForDate:(NSDate *)scheduledDate
+{
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    if (!localNotification)
+    {
+        return;
+    }
+    
+    localNotification.fireDate = scheduledDate;
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    
+    localNotification.alertBody = @"Bulbasaur has another note for you :-)";
+    localNotification.alertAction = @"Open PokemonADay";
+    localNotification.alertTitle = @"Awwwwe yeh!";
+    
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 
 @end
